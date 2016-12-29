@@ -1,5 +1,6 @@
 package com.howtodoinjava.demo.model;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -19,11 +20,98 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.io.File;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+
+
+
 public class NextoryAutomationScripts {
+	
+	static Logger log = Logger.getLogger(CampaignRedeemAccepted.class);
 
 	// setting up browser firefox 1, chrome 2.
 
 	// static int browser=1;
+	public void resetfirefoxbrowser() {
+		try {
+	        String[] command = {"cmd.exe", "/C", "Start", "D:\\ismailtest\\testng\\Batches\\Firefoxbatch.bat"};
+	        Process p =  Runtime.getRuntime().exec(command);           
+	    } catch (IOException e) {
+	    	e.printStackTrace();
+	    }
+	}
+	
+	public void resetgooglebrowser() {
+		try {
+	        String[] command = {"cmd.exe", "/C", "Start", "D:\\ismailtest\\testng\\Batches\\Googlebatch.bat"};
+	        Process p =  Runtime.getRuntime().exec(command);           
+	    } catch (IOException e) {
+	    	e.printStackTrace();
+	    }
+	}
+	
+	public void resetphantombrowser() {
+		try {
+	        String[] command = {"cmd.exe", "/C", "Start", "D:\\ismailtest\\testng\\Batches\\Phantomheadlessbatch.bat"};
+	        Process p =  Runtime.getRuntime().exec(command);           
+	    } catch (IOException e) {
+	    	e.printStackTrace();
+	    }
+	}
+	
+	public void subscriptionbase() {
+		try {
+	        String[] command = {"cmd.exe", "/C", "Start", "D:\\ismailtest\\testng\\Batches\\basesubscription.bat"};
+	        Process p =  Runtime.getRuntime().exec(command);           
+	    } catch (IOException e) {
+	    	e.printStackTrace();
+	    }
+	}
+	
+	
+	public void subscriptionstandard() {
+		try {
+	        String[] command = {"cmd.exe", "/C", "Start", "D:\\ismailtest\\testng\\Batches\\standardsubscription.bat"};
+	        Process p =  Runtime.getRuntime().exec(command);           
+	    } catch (IOException e) {
+	    	e.printStackTrace();
+	    }
+	}
+	public void subcriptionpremium() {
+		try {
+	        String[] command = {"cmd.exe", "/C", "Start", "D:\\ismailtest\\testng\\Batches\\premiumsubscription.bat"};
+	        Process p =  Runtime.getRuntime().exec(command);           
+	    } catch (IOException e) {
+	    	e.printStackTrace();
+	    }
+	}
+	
 	public static int browser22() {
 		ResultSet rs1 = null;
 		int browser = 0;
@@ -46,7 +134,7 @@ public class NextoryAutomationScripts {
 			}
 
 		} catch (Exception e) {
-			System.err.println(e.getMessage());
+			log.error(e.getMessage());
 		} finally {
 			try {
 				rs1.close();
@@ -64,6 +152,8 @@ public class NextoryAutomationScripts {
 	static String mail = "ismail3@test.se";
 	static String pwd = "ismail";
 	static WebDriver driver;
+
+	
 
 	@Test
 	public void loadingHomepage() {
@@ -107,25 +197,25 @@ public class NextoryAutomationScripts {
 			while (rs.next()) {
 				lastName = rs.getString("name");
 				// String ID = rs.getString("ID");
-				// System.out.println(lastName+"-"+ID);
+				// log.info(lastName+"-"+ID);
 				int k = 0;
 				int i = lastName.length();
 				int j = i - 1;
 				for (k = 1; k < i - 1; k++)
 					k = k + 1;
-				// System.out.println(lastName+" "+i+" "+j+" "+k );
-				System.out.println(lastName);
+				// log.info(lastName+" "+i+" "+j+" "+k );
+				log.info(lastName);
 
 			}
 
 			String day14membercode = "203002";
 			Assert.assertEquals(lastName, day14membercode);
-			System.out.println("Test case passed");
+			log.info("Test case passed");
 
 			conn.close();
 		} catch (Exception e) {
-			System.err.println("Got an exception! ");
-			System.err.println(e.getMessage());
+			log.error("Got an exception! ");
+			log.error(e.getMessage());
 		}
 	}
 
@@ -134,7 +224,7 @@ public class NextoryAutomationScripts {
 		// WebDriver driver;
 		browser22();
 		int a = NextoryAutomationScripts.browser22();
-		System.out.println(a);
+		log.info(a);
 		if (NextoryAutomationScripts.browser22() == 1) {
 			System.setProperty("webdriver.gecko.driver",
 					"D:\\ismailtest\\geckodriver-v0.11.1-win32\\geckodriver.exe");
@@ -157,7 +247,7 @@ public class NextoryAutomationScripts {
 		// driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		// driver.findElement(By.linkText("LOGGA IN")).click();
 
-		System.out.println(driver.getTitle());
+		log.info(driver.getTitle());
 		WebDriverWait wait = new WebDriverWait(driver, 60);
 		WebElement element = wait
 				.until(ExpectedConditions.elementToBeClickable(By
@@ -170,7 +260,7 @@ public class NextoryAutomationScripts {
 		epassword.submit();
 		// driver.findElement(By.linkText("Logga in")).submit();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		System.out.println(driver.getTitle() + " Test Passed Login successful");
+		log.info(driver.getTitle() + " Test Passed Login successful");
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
 		// driver.findElement(By.xpath(".//*[@id='subMenu-wrap']/div/div/div/ul/li[3]/span/a")).click();
@@ -187,7 +277,7 @@ public class NextoryAutomationScripts {
 		Thread.sleep(5000);
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
-		System.out.println(driver.getTitle() + " " + logout + " "
+		log.info(driver.getTitle() + " " + logout + " "
 				+ "Test Passed Logout successful");
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		Thread.sleep(5000);

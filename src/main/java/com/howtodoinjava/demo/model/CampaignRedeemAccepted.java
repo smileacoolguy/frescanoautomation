@@ -190,7 +190,7 @@ public class CampaignRedeemAccepted {
 			Assert.assertEquals(membertypecodeexpected,membertypecodeactual);
 			log.info("membertypecodeexpected="+membertypecodeexpected+"membertypecodeactual="+membertypecodeactual);
 			//generating and renaming logs for historical purpose
-			PropertyConfigurator.configure("D:\\ismailtest\\testng\\TestNG-web\\log4j.properties");
+			PropertyConfigurator.configure("log4j.properties");
 			String filename=(df.format(dateobj)).replaceAll("/", "_").replaceAll(" ","_").replaceAll(":","_");
 			log.info(filename);
 			File oldfile = new File("D:\\ismailtest\\testng\\log4j\\HTMLLayout.html");

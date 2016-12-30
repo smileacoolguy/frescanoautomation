@@ -15,19 +15,20 @@
      <a href="${contextPath}/login_testNG">Login TestNG</a><br/>
      <a href="${contextPath}/Sampleismail_testNG">Login TestNG sample ismail</a><br/>
      <pre>Choose the browser, Please select ONLY 1 below </pre>
-     <a href="${contextPath}/setfirefoxbrowser">Run Test with FIREFOX </a>  &nbsp;
-     <a href="${contextPath}/setgooglebrowser">Run Test with GOOGLE CHROME </a>  &nbsp;
-     <a href="${contextPath}/setphantombrowser">Run Test with PHANTOM </a>  &nbsp;
+     <a href="${contextPath}/setfirefoxbrowser" >Run Test with FIREFOX </a>  &nbsp;
+     <a href="${contextPath}/setgooglebrowser" >Run Test with GOOGLE CHROME </a>  &nbsp;
+     <a href="${contextPath}/setphantombrowser" >Run Test with PHANTOM </a>  &nbsp;
      
      <br/>
      <pre>Choose the subscription, Please select ONLY 1 below </pre>
-     <a href="${contextPath}/setsubscriptiontypebase">Run Test with subscription type: BASE </a> &nbsp;
-     <a href="${contextPath}/setsubscriptiontypestandard">Run Test with subscription type: STANDARD</a>  &nbsp;
-     <a href="${contextPath}/setsubscriptiontypepremium">Run Test with  subscription type: PREMIUM</a>  &nbsp;
+     <a href="${contextPath}/setsubscriptiontypebase" >Run Test with subscription type: BASE </a> &nbsp;
+     <a href="${contextPath}/setsubscriptiontypestandard" >Run Test with subscription type: STANDARD</a>  &nbsp;
+     <a href="${contextPath}/setsubscriptiontypepremium" >Run Test with  subscription type: PREMIUM</a>  &nbsp;
      
      <br/>
-     
-     <a href="${contextPath}/campaignredeemmember">Run test for Campaign redeem</a><br/>
+     <p>Test Data: Run Shell script in acceptance before clicking below link 
+     Copy this command run on acceptance "bash -x /home/acpt/test/campaignactivemember.sh 1>/home/acpt/test/cam.out 2>/home/acpt/test/cam.err" </p>
+     <a href="${contextPath}/campaignredeemmember" target="_blank">Run test for Campaign redeem</a><br/>
      <span> ${str}</span>
 </body>
 

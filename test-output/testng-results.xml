@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="41" started-at="2016-12-30T07:10:22Z" finished-at="2016-12-30T07:10:22Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="41" started-at="2016-12-30T07:10:22Z" finished-at="2016-12-30T07:10:22Z">
+      <class name="com.howtodoinjava.demo.model.FirstTestNGFile">
+        <test-method status="PASS" signature="f()[pri:0, instance:com.howtodoinjava.demo.model.FirstTestNGFile@3f4d3d]" name="f" duration-ms="27" started-at="2016-12-30T12:40:22Z" finished-at="2016-12-30T12:40:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+      </class> <!-- com.howtodoinjava.demo.model.FirstTestNGFile -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

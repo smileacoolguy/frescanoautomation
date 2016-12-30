@@ -45,6 +45,8 @@ public class CampaignRedeemAccepted {
 	String voucher = null;
 	WebDriver driver;
 	static Logger log = Logger.getLogger(CampaignRedeemAccepted.class);
+	DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+	Date dateobj = new Date();
 	
 	
 	
@@ -144,7 +146,9 @@ public class CampaignRedeemAccepted {
 			Date dateobj = new Date();
 			String datemask="screenshot".concat((df.format(dateobj)).replaceAll("/", "_").replaceAll(" ","_").replaceAll(":","_"));
 			log.info(datemask);
-			FileUtils.copyFile(scrFile, new File("D:\\ismailtest\\testng\\screenshot\\"+datemask+".png"));
+			FileUtils.copyFile(scrFile, new File("//192.168.2.25/Shared/Screenshots/"+datemask+".png"));
+			log.info("Screenshot located in folder ");
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -184,6 +188,22 @@ public class CampaignRedeemAccepted {
 				}
 			}
 			Assert.assertEquals(membertypecodeexpected,membertypecodeactual);
+			log.info("membertypecodeexpected="+membertypecodeexpected+"membertypecodeactual="+membertypecodeactual);
+			//generating and renaming logs for historical purpose
+			PropertyConfigurator.configure("D:\\ismailtest\\testng\\TestNG-web\\log4j.properties");
+			String filename=(df.format(dateobj)).replaceAll("/", "_").replaceAll(" ","_").replaceAll(":","_");
+			log.info(filename);
+			File oldfile = new File("D:\\ismailtest\\testng\\log4j\\HTMLLayout.html");
+			String filename1="Campaign".concat(filename);
+			String s1="//192.168.2.25/Shared/Logs/"+filename1+".html";
+		      File newfile = new File(s1);
+		      try {
+				FileUtils.copyFile(oldfile,newfile);
+				
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	
 	
@@ -239,16 +259,18 @@ public class CampaignRedeemAccepted {
 				+ existingmail + " " + mail + " " + pwd + " " + voucher);
 		if (browser == 1) {
 			System.setProperty("webdriver.gecko.driver",
-					"D:\\ismailtest\\geckodriver-v0.11.1-win32\\geckodriver.exe");
+					"//192.168.2.25/Shared/Drivers/geckodriver.exe");
+					//"D:\\ismailtest\\geckodriver-v0.11.1-win32\\geckodriver.exe");
 			driver = new FirefoxDriver();
 		} else if (browser == 2) {
 			System.setProperty("webdriver.chrome.driver",
-					"D:\\ismailtest\\chromedriver_win32_2.6\\chromedriver.exe");
+					"//192.168.2.25/Shared/Drivers/chromedriver.exe");
+					//"D:\\ismailtest\\chromedriver_win32_2.6\\chromedriver.exe");
 			driver = new ChromeDriver();
 		} else if (browser == 3) {
 			System.setProperty(
 					"phantomjs.binary.path",
-					"D:\\ismailtest\\phantomjs-2.1.1-windows\\phantomjs-2.1.1-windows\\bin\\phantomjs.exe");
+					"//192.168.2.25/Shared/Drivers/phantomjs.exe");
 			driver = new PhantomJSDriver();
 		}
 	}
@@ -256,6 +278,7 @@ public class CampaignRedeemAccepted {
 	@AfterClass
 	public void killbrowserprocesses() {
 		driver.quit();
+		log.info("all browser processess have been killed");
 	}
 }
 	

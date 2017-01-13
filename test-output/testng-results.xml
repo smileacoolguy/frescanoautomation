@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="36" started-at="2016-12-30T07:19:45Z" finished-at="2016-12-30T07:19:45Z">
+  <suite name="Default suite" duration-ms="44" started-at="2016-12-30T09:26:50Z" finished-at="2016-12-30T09:26:50Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="36" started-at="2016-12-30T07:19:45Z" finished-at="2016-12-30T07:19:45Z">
+    <test name="Default test" duration-ms="44" started-at="2016-12-30T09:26:50Z" finished-at="2016-12-30T09:26:50Z">
       <class name="com.howtodoinjava.demo.model.FirstTestNGFile">
-        <test-method status="PASS" signature="f()[pri:0, instance:com.howtodoinjava.demo.model.FirstTestNGFile@3f4d3d]" name="f" duration-ms="25" started-at="2016-12-30T12:49:45Z" finished-at="2016-12-30T12:49:45Z">
+        <test-method status="PASS" signature="f()[pri:0, instance:com.howtodoinjava.demo.model.FirstTestNGFile@3f4d3d]" name="f" duration-ms="32" started-at="2016-12-30T14:56:50Z" finished-at="2016-12-30T14:56:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- f -->

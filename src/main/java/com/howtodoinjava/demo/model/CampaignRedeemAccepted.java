@@ -108,14 +108,14 @@ public class CampaignRedeemAccepted {
 						.xpath("html/body/div[2]/div[4]/div/div/div/div[1]/form/div[3]/select"));
 		// selecting month from dropdown
 		Select dropdown = new Select(selectelement);
-		dropdown.selectByIndex(6);
+		dropdown.selectByIndex(8);
 		// driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		// selecting year from dropdown
 		WebElement selectelement1 = driver
 				.findElement(By
 						.xpath("html/body/div[2]/div[4]/div/div/div/div[1]/form/div[4]/select"));
 		Select dropdown1 = new Select(selectelement1);
-		dropdown1.selectByValue("2016");
+		dropdown1.selectByValue("2018");
 		// driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		driver.findElement(
 				By.xpath("html/body/div[2]/div[4]/div/div/div/div[1]/form/div[5]/input"))
@@ -123,7 +123,7 @@ public class CampaignRedeemAccepted {
 		// driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		driver.findElement(
 				By.xpath(".//*[@id='adyen-encrypted-form']/input[4]")).submit();
-		
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.findElement(By.id("firstname")).sendKeys("QA");
 		driver.findElement(By.id("lastname")).sendKeys("Test");
 		WebElement login = driver.findElement(By.id("cellphone"));

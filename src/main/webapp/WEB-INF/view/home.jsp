@@ -7,15 +7,12 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <head>
-    <title>Home</title>
+    <title>Nextory_Auto</title>
 </head>
 <body>
-{
-background-color: #93B874;
-pre{
-background-color: #4B0082;
-}
-}
+
+Nextory_Auto
+
 
 <br/><br/>
    <a href="${contextPath}/run_testNG">Loading home TestNG</a><br/>

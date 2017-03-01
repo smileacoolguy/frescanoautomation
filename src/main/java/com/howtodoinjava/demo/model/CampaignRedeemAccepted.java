@@ -52,7 +52,7 @@ public class CampaignRedeemAccepted {
 	
 	
 	
-	@Test (enabled=false)//(priority=1)
+	@Test (enabled=true)//(priority=1)
 	public void URLlaunch() {
 		WebDriverWait wait = new WebDriverWait(driver, 60);
 			
@@ -75,7 +75,7 @@ public class CampaignRedeemAccepted {
 		
 	
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By
-						.xpath(".//*[@id='page-wrap']/div[5]/div/div/div[1]/ul/li[10]/a")));
+						.xpath(".//*[@id='page-wrap']/div[6]/div/div/div[1]/ul/li[10]/a")));
 		element.click();
 		
 		
@@ -195,7 +195,9 @@ public class CampaignRedeemAccepted {
 			log.info(filename);
 			File oldfile = new File("D:\\ismailtest\\testng\\log4j\\HTMLLayout.html");
 			String filename1="Campaign".concat(filename);
-			String s1="//192.168.2.25/Shared/Logs/"+filename1+".html";
+			String s1="//10.91.0.73/Shared/Logs/"+filename1+".html";
+			// 192.168.2.25
+			
 		      File newfile = new File(s1);
 		      try {
 				FileUtils.copyFile(oldfile,newfile);
@@ -259,18 +261,18 @@ public class CampaignRedeemAccepted {
 				+ existingmail + " " + mail + " " + pwd + " " + voucher);
 		if (browser == 1) {
 			System.setProperty("webdriver.gecko.driver",
-					"//192.168.2.25/Shared/Drivers/geckodriver.exe");
+					"//10.91.0.73/Shared/Drivers/geckodriver.exe");
 					//"D:\\ismailtest\\geckodriver-v0.11.1-win32\\geckodriver.exe");
 			driver = new FirefoxDriver();
 		} else if (browser == 2) {
 			System.setProperty("webdriver.chrome.driver",
-					"//192.168.2.25/Shared/Drivers/chromedriver.exe");
+					"//10.91.0.73/Shared/Drivers/chromedriver.exe");
 					//"D:\\ismailtest\\chromedriver_win32_2.6\\chromedriver.exe");
 			driver = new ChromeDriver();
 		} else if (browser == 3) {
 			System.setProperty(
 					"phantomjs.binary.path",
-					"//192.168.2.25/Shared/Drivers/phantomjs.exe");
+					"//10.91.0.73/Shared/Drivers/phantomjs.exe");
 			driver = new PhantomJSDriver();
 		}
 	}

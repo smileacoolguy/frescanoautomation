@@ -159,7 +159,7 @@ public class NextoryAutomationScripts {
 	public void loadingHomepage() {
 		WebDriver driver;
 		System.setProperty("webdriver.gecko.driver",
-				"//192.168.2.25/Shared/Drivers/geckodriver.exe");
+				"//10.91.0.73/Shared/Drivers/geckodriver.exe");
 		driver = new FirefoxDriver();
 		String url = "http://104.199.22.40//";
 		driver.get(url);
@@ -227,16 +227,16 @@ public class NextoryAutomationScripts {
 		log.info(a);
 		if (NextoryAutomationScripts.browser22() == 1) {
 			System.setProperty("webdriver.gecko.driver",
-					"//192.168.2.25/Shared/Drivers/geckodriver.exe");
+					"//10.91.0.73/Shared/Drivers/geckodriver.exe");
 			driver = new FirefoxDriver();
 		} else if (NextoryAutomationScripts.browser22() == 2) {
 			System.setProperty("webdriver.chrome.driver",
-					"//192.168.2.25/Shared/Drivers/chromedriver.exe");
+					"//10.91.0.73/Shared/Drivers/chromedriver.exe");
 			driver = new ChromeDriver();
 		} else if (NextoryAutomationScripts.browser22() == 3) {
 			System.setProperty(
 					"phantomjs.binary.path",
-					"//192.168.2.25/Shared/Drivers/phantomjs.exe");
+					"//10.91.0.73/Shared/Drivers/phantomjs.exe");
 					//"D:\\ismailtest\\phantomjs-2.1.1-windows\\phantomjs-2.1.1-windows\\bin\\phantomjs.exe");
 			driver = new PhantomJSDriver();
 		}

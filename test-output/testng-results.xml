@@ -2,16 +2,24 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="44" started-at="2016-12-30T09:26:50Z" finished-at="2016-12-30T09:26:50Z">
+  <suite name="Default suite" duration-ms="3643" started-at="2017-03-01T13:48:21Z" finished-at="2017-03-01T13:48:25Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="44" started-at="2016-12-30T09:26:50Z" finished-at="2016-12-30T09:26:50Z">
-      <class name="com.howtodoinjava.demo.model.FirstTestNGFile">
-        <test-method status="PASS" signature="f()[pri:0, instance:com.howtodoinjava.demo.model.FirstTestNGFile@3f4d3d]" name="f" duration-ms="32" started-at="2016-12-30T14:56:50Z" finished-at="2016-12-30T14:56:50Z">
+    <test name="Default test" duration-ms="3643" started-at="2017-03-01T13:48:21Z" finished-at="2017-03-01T13:48:25Z">
+      <class name="com.howtodoinjava.demo.model.CampaignRedeemAccepted">
+        <test-method status="PASS" signature="browserselect()[pri:0, instance:com.howtodoinjava.demo.model.CampaignRedeemAccepted@41eaa2]" name="browserselect" is-config="true" duration-ms="2685" started-at="2017-03-01T19:18:21Z" finished-at="2017-03-01T19:18:24Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- f -->
-      </class> <!-- com.howtodoinjava.demo.model.FirstTestNGFile -->
+        </test-method> <!-- browserselect -->
+        <test-method status="PASS" signature="checkthemembertypecode()[pri:0, instance:com.howtodoinjava.demo.model.CampaignRedeemAccepted@41eaa2]" name="checkthemembertypecode" duration-ms="59" started-at="2017-03-01T19:18:24Z" finished-at="2017-03-01T19:18:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkthemembertypecode -->
+        <test-method status="PASS" signature="killbrowserprocesses()[pri:0, instance:com.howtodoinjava.demo.model.CampaignRedeemAccepted@41eaa2]" name="killbrowserprocesses" is-config="true" duration-ms="887" started-at="2017-03-01T19:18:24Z" finished-at="2017-03-01T19:18:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- killbrowserprocesses -->
+      </class> <!-- com.howtodoinjava.demo.model.CampaignRedeemAccepted -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

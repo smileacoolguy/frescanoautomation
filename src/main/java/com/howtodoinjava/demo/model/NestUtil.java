@@ -228,15 +228,16 @@ public class NestUtil {
 		SimpleDateFormat dateFormatUTC=new SimpleDateFormat(DATE_FORMAT);
 		dateFormatUTC.setTimeZone(TimeZone.getTimeZone("UTC"));
 		String timStamp=dateFormatUTC.format(new Date());
-		int p=1000419;
+		int p=1048919;
 		
 		String URL="https://xdapi.elib.se/v1.0/products/"+p+"/files";
 		String URL1=URL.concat(getOtherPartURL("2238", "ARUYiFCtxHNSvTI6ngXy1hBkQ7LJjVK0ZqrWPsz2wGMedo49mb", "" + p));
 		System.out.println(URL1);
 		
-		String URLbook=URL.concat("/"+p+".mp3/");
-		String URL2=URLbook.concat(getOtherPartURL("2238", "ARUYiFCtxHNSvTI6ngXy1hBkQ7LJjVK0ZqrWPsz2wGMedo49mb", "" + p, "1047585.mp3",timStamp));
+		String URLbook=URL.concat("/"+p+".pdf/");
+		String URL2=URLbook.concat(getOtherPartURL("2238", "ARUYiFCtxHNSvTI6ngXy1hBkQ7LJjVK0ZqrWPsz2wGMedo49mb", "" + p, p+".pdf",timStamp));
 		System.out.println(URL2);
+		
 		System.out.println(getOtherPartURL("2238", "ARUYiFCtxHNSvTI6ngXy1hBkQ7LJjVK0ZqrWPsz2wGMedo49mb", "" + p));
 		System.out.println(getOtherPartURL("2238", "ARUYiFCtxHNSvTI6ngXy1hBkQ7LJjVK0ZqrWPsz2wGMedo49mb", "" + p, "1047585.mp3",timStamp));
 		/*if(logger.isDebugEnabled())
